@@ -1,0 +1,163 @@
+:root {
+    --primary: #201d60;
+    --background: #faf5dd;
+    --text: #222;
+    --accent: #ffb347;
+    --border-raduis: 12px;
+    --transition: 0.3s;   
+}
+body {
+    margin: 0;
+    font-family: 'segoe UI', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    transition: background var(--transition), color var(--transition);
+
+}
+
+header {
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var (--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+    background: #fff;
+    border-radius: var(--border-raduis);
+    box-shadow:  0 2px 12px rgba(0,0,0,0.04);
+    padding: 2rem;
+    transition: background var(--transition);
+}
+
+.projects-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 1.5rem; 
+}
+
+.project-card {
+    background: var(--background);
+    border-radius: var(--border-raduis);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 1.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+
+}
+
+.project-card:hover {
+    transform: translate(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(79,140,255,0.15);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-raduis);
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    transition: border var(--transition);
+}
+
+input:focus, textarea:focus {
+    border: 1.5px solid var(--primary);
+    outline: none;
+}
+
+button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--accent);
+    color: #222;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: #f1f1f1;
+    color: #888;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .section {
+        padding: 1rem;
+    }
+}
+
+/*Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #181a1b;
+        --text: #f1f1f1;
+    }
+     .section, .project-card {
+        background: #23272a;
+     }
+     footer {
+        background: #23272a;
+        color: #bbb;
+     }
+}
